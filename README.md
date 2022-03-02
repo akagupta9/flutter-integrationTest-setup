@@ -53,6 +53,7 @@ A simple application with 2 pages and navigations on Button Click.
 ### Running Integration Test
  - Dependencies
  - Running All Tests or A single File
+ - Run command ```` DEVICE=<device_name> ./testRunner.sh  ````
  
 ### Reporting
  - dot dart reporter
