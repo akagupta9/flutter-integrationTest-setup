@@ -28,7 +28,8 @@
 ### Application Walkthrough
 A simple application with 2 pages and navigations on Button Click.
  - Demo
- - https://user-images.githubusercontent.com/43808980/156377453-c40da18d-0925-4c8f-b16a-9037e044fbde.mp4
+ 
+ https://user-images.githubusercontent.com/43808980/156377453-c40da18d-0925-4c8f-b16a-9037e044fbde.mp4
 
  
 ### Folder Structure Walkthrough
@@ -58,8 +59,6 @@ A simple application with 2 pages and navigations on Button Click.
  - Running All Tests or A single File
  - Run command ```` DEVICE=<device_name> ./testRunner.sh  ````
 
-
-https://user-images.githubusercontent.com/43808980/156378231-14abceff-03f3-4fb8-85cf-1ac9daa87d75.mp4
 
  
 ### Reporting
