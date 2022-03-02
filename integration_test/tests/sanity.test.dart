@@ -1,10 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
+import '../pages/clickMe.page.dart';
 import '../pages/home.page.dart';
 import '../test-init.dart';
 
 void main() {
-  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+  final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized()
+      as IntegrationTestWidgetsFlutterBinding;
+  binding.framePolicy = LiveTestWidgetsFlutterBindingFramePolicy.fullyLive;
 
   group('Sanity End to End Test', () {
     testWidgets('Verify Screen UI validations', (WidgetTester tester) async {
@@ -22,8 +25,12 @@ void main() {
         (WidgetTester tester) async {
       await initTest(tester);
       final homePage = HomePage(tester);
+      final clickMePage = ClickMePage(tester);
+
       await homePage.navigateToClickMeButton();
       await homePage.wait(timeInSec: 5);
+
+      expect(await clickMePage.isUserNavigated(), true);
     });
   });
 }

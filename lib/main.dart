@@ -49,11 +49,12 @@ class SecondRoute extends StatelessWidget {
         backgroundColor: Colors.green,
       ),
       body: Center(
+        key: Key('clickMePageBody'),
         child: RaisedButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Text('Back!'),
+          child: Text('Back!, Currently You are on Click Me Page'),
         ),
       ),
     );
@@ -67,6 +68,17 @@ class ThirdRoute extends StatelessWidget {
       appBar: AppBar(
         title: Text("Tap Me Page"),
         backgroundColor: Colors.green,
+      ),
+      body: Center(
+        key: Key('tapMePageBody'),
+        child: RaisedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text(
+            'Back!, Currently You are on Tap Me Page',
+          ),
+        ),
       ),
     );
   }
