@@ -16,9 +16,9 @@
  A single platform for web, ios, android app.
 
 ### Pre-requisite
-| Flutter SDK Download | [https://docs.flutter.dev/get-started/install/macos][PlDb] |
-| Flutter Extension | [VS Code platform ]
-| Setup Test | ````flutter doctor ````
+- | Flutter SDK Download | [https://docs.flutter.dev/get-started/install/macos]
+- | Flutter Extension | [VS Code platform ]
+- | Setup Test | ````flutter doctor ````
 
 ### How to Create Project
 - Navigate to desired directory

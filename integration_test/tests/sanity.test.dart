@@ -13,6 +13,7 @@ void main() {
     testWidgets('Verify Screen UI validations', (WidgetTester tester) async {
       await initTest(tester);
       final homePage = HomePage(tester);
+      
       expect(await homePage.isClickMeButtonPresent(), true,
           reason: "Click Me Button not present");
       expect(await homePage.isTapMeButtonPresent(), true,
