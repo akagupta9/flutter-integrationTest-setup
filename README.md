@@ -59,11 +59,13 @@ A simple application with 2 pages and navigations on Button Click.
  - Running All Tests or A single File
  - Run command ```` DEVICE=<device_name> ./testRunner.sh  ````
 
-
+https://user-images.githubusercontent.com/43808980/156505597-ecab4b54-8845-48cd-9710-db36e1635957.mp4
  
 ### Reporting
  - dot dart reporter
  - junit reporter
+
+
 
 ### Further Scope
  - We can integrate with Jenkins by Running Test on FireBase Test Lab
