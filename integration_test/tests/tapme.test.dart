@@ -17,7 +17,7 @@ void main() {
       final tapMePage = TapMePage(tester);
 
       await homePage.navigateToTapMeButton();
-      await homePage.wait(timeInSec: 5);
+      await homePage.wait(timeInSec: 2);
 
       expect(await tapMePage.isUserNavigated(), true);
     });

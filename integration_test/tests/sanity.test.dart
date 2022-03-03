@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import '../pages/clickMe.page.dart';
 import '../pages/home.page.dart';
+import '../pages/tapMe.page.dart';
 import '../test-init.dart';
 
 void main() {
@@ -19,7 +20,7 @@ void main() {
       expect(await homePage.isTapMeButtonPresent(), true,
           reason: "Tap Me Button not present");
 
-      await homePage.wait(timeInSec: 5);
+      await homePage.wait(timeInSec: 1);
     });
 
     testWidgets('Validate Navigation to ClickMe page',
@@ -29,9 +30,21 @@ void main() {
       final clickMePage = ClickMePage(tester);
 
       await homePage.navigateToClickMeButton();
-      await homePage.wait(timeInSec: 5);
+      await homePage.wait(timeInSec: 2);
 
       expect(await clickMePage.isUserNavigated(), true);
+    });
+
+    testWidgets('Validate Navigation to TapMe page',
+        (WidgetTester tester) async {
+      await initTest(tester);
+      final homePage = HomePage(tester);
+      final tapMePage = TapMePage(tester);
+
+      await homePage.navigateToTapMeButton();
+      await homePage.wait(timeInSec: 2);
+
+      expect(await tapMePage.isUserNavigated(), true);
     });
   });
 }
