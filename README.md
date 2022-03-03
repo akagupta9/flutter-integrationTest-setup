@@ -28,12 +28,16 @@
 ### Application Walkthrough
 A simple application with 2 pages and navigations on Button Click.
  - Demo
+ 
+ https://user-images.githubusercontent.com/43808980/156377453-c40da18d-0925-4c8f-b16a-9037e044fbde.mp4
 
+ 
 ### Folder Structure Walkthrough
  - lib folder
  - android, ios, web etc folder
  - pubspec.yaml file and pubspec-lock.ymal file
  - dependency structure
+
 
 ### Running Application
  - In Emulator
@@ -54,10 +58,14 @@ A simple application with 2 pages and navigations on Button Click.
  - Dependencies
  - Running All Tests or A single File
  - Run command ```` DEVICE=<device_name> ./testRunner.sh  ````
+
+https://user-images.githubusercontent.com/43808980/156505597-ecab4b54-8845-48cd-9710-db36e1635957.mp4
  
 ### Reporting
  - dot dart reporter
  - junit reporter
+
+
 
 ### Further Scope
  - We can integrate with Jenkins by Running Test on FireBase Test Lab
