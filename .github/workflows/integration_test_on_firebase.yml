@@ -1,0 +1,68 @@
+name: Parallel Test Execution On Firebase Test Lab
+
+on:
+  workflow_dispatch:
+
+env:
+  ANDROID_HOME: /Users/runner/Library/Android/sdk
+  JAVA_HOME: /Users/runner/hostedtoolcache/Java_Microsoft_jdk/11.0.13/x64/Contents/Home
+  flutter_version: "3.3.9"
+
+jobs:
+  integration-tests:
+    runs-on: macos-11
+    timeout-minutes: 60
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        tests: [SUITE1,SUITE2]
+
+    steps:
+      - name: Checkout Repository And Submodules
+        uses: actions/checkout@v2
+
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          service_account: 'Your Service Account Link'
+          credentials_json: ${{ }}
+
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v0'
+
+      - name: 'Use gcloud CLI'
+        run: 'gcloud info'
+
+      - name: Java Setup
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+            
+      # Caching Flutter SDK download based on version
+      - name: Flutter SDK Download
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.flutter_version }}
+          channel: 'stable'
+          cache: true
+          cache-key: flutterA-${{ env.flutter_version }}
+          cache-path: ${{ runner.tool_cache }}/flutterA-${{ env.flutter_version }}
+      
+      - name: Download Flutter Dependencies
+        run:  |
+            flutter pub get
+
+      # Assuming shell script to Run on Firebase is Placed at file location - integration_test/firebase_parallel_test_runner.sh
+      - name: Assign Permission to shell file
+        run: |
+          chmod 777 ./integration_test/firebase_parallel_test_runner.sh 
+
+      # Passing ${{matrix.tests}} as positional parameter to shell file
+      # If ${{matrix.tests}} = SUITE1 , we will upload Suite1.dart based test apk and same as SUITE2
+
+      - name: Run Suite
+        run: |
+          sh .integration_test/firebase_parallel_test_runner.sh  ${{matrix.tests}}
