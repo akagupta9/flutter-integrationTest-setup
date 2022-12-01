@@ -65,11 +65,8 @@ https://user-images.githubusercontent.com/43808980/156505597-ecab4b54-8845-48cd-
  - dot dart reporter
  - junit reporter
 
+## Running Test In FireBase in Parallel
 
-
-### Further Scope
- - We can integrate with Jenkins by Running Test on FireBase Test Lab
- - CodeMagic also support e2e CI/CD integration 
 
 Stay Tunned for those configuration level details.
 
