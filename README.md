@@ -1,4 +1,4 @@
-# Flutter : Integration Testing
+# Flutter : Integration Testing Setup
 
 ## Topics Covered
 - Introduction
